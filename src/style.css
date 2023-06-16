@@ -1,0 +1,35 @@
+.homepage{
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card{
+    display: flex;
+    margin: 10px;
+    /* width: 80%; */
+}
+
+.thumbnail{
+    /* max-width: 18%; */
+    width: 25%;
+    
+}
+
+.description{
+    align-items: flex-start;
+    text-align: left;
+    width: 50%;
+    margin-left: 15px;
+}
+
+.ds-button{
+    width: fit-content;
+    padding: 5px;
+    margin: 2px;
+}
+
+.results{
+    position: absolute;
+    top: 95%;
+    left: 1%;
+}
