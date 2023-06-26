@@ -1,35 +1,23 @@
-.homepage{
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.card{
-    display: flex;
-    margin: 10px;
-    /* width: 80%; */
-}
-
-.thumbnail{
-    /* max-width: 18%; */
-    width: 25%;
-    
-}
-
-.description{
-    align-items: flex-start;
-    text-align: left;
-    width: 50%;
-    margin-left: 15px;
-}
-
-.ds-button{
-    width: fit-content;
-    padding: 5px;
-    margin: 2px;
+.app{
+    color: rgb(200, 200, 200);
 }
 
 .results{
-    position: absolute;
-    top: 95%;
+    position: fixed;
+    top: 90%;
     left: 1%;
+    background-color: wheat;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color : black;
+}
+
+.ds-badge{
+    border-width: 2px;
+    
+}
+
+.green{
+    border-color: green;
 }

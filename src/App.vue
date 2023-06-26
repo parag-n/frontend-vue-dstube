@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <ds-nav-bar></ds-nav-bar>
-    <home-page v-show="currentView=='home'" @changeView="changeView" :cards="cards" @remove="removeCard"></home-page>
-    <profile-page v-show="currentView=='profile'" @changeView="changeView" :userDetails="userDetails"></profile-page>
+  <div class="app">
+    <ds-nav-bar @changeView="changeView"></ds-nav-bar>
+    <home-page v-if="currentView=='home'" :cards="cards" @remove="removeCard" @showView="showView" ></home-page>
+    <profile-page v-else-if="currentView=='profile'" :userDetails="userDetails"></profile-page>
+    <view-page v-else-if="currentView=='view'" :card="player"></view-page>
   </div>
 </template>
 
@@ -10,7 +11,8 @@
 import DsNavBar from "./components/DsNavBar.vue";
 import MyAxios from "./custom-config/MyAxios";
 import HomePage from "./components/HomePage.vue";
-import ProfilePage from "./components/ProfilePage.vue"
+import ProfilePage from "./components/ProfilePage.vue";
+import ViewPage from "./components/ViewPage.vue"
 
 export default {
   name: "App",
@@ -23,13 +25,15 @@ export default {
         email: "parag.nukalwar@3ds.com",
         mobile: 7007007007
       },
-      currentView: "home"
+      currentView: "home",
+      player:{}
     })
   },
   components: {
     DsNavBar,
     HomePage,
-    ProfilePage
+    ProfilePage,
+    ViewPage
   },
   mounted() {
     MyAxios.get("/cards")
@@ -52,6 +56,15 @@ export default {
     changeView(viewName){
       this.currentView = viewName;
       console.log("changing view")
+    },
+
+    updateUser(user){
+      this.userDetails=user;
+    },
+
+    showView(card){
+      this.changeView("view");
+      this.player = card;
     }
   }
 };

@@ -1,0 +1,24 @@
+
+.ds-button{
+    width: fit-content;
+    padding: 10px 15px;
+    margin: 2px;
+    border-radius: 5px;
+    box-shadow: none;
+    background: none;
+    border-color: #fff;
+    color: #fff;
+
+}
+
+.red-button{
+    border: 0;
+    background-color: #CC0000;
+    color: #fff;
+}
+
+.blue-button{
+    border-color: #3EA6FF;
+    color: #3EA6FF;
+    border-width: 2px;
+}
